@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,14 +25,14 @@
         .container {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
             max-width: 520px;
             width: 100%;
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #1d6fa5 0%, #165a87 100%);
+            background: linear-gradient(135deg, #ff9100 0%, #ff7700 100%);
             color: white;
             padding: 28px 30px;
             text-align: center;
@@ -53,11 +54,13 @@
             padding: 30px;
         }
 
-        .verification-section, .payment-section {
+        .verification-section,
+        .payment-section {
             display: none;
         }
 
-        .verification-section.active, .payment-section.active {
+        .verification-section.active,
+        .payment-section.active {
             display: block;
         }
 
@@ -85,6 +88,7 @@
             border-radius: 8px;
             margin-bottom: 20px;
             border: 1px solid #e9ecef;
+            border-left: 4px solid #ff9100;
         }
 
         .question-box h3 {
@@ -115,15 +119,15 @@
         }
 
         .image-option:hover {
-            border-color: #1d6fa5;
+            border-color: #ff9100;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(29, 111, 165, 0.15);
+            box-shadow: 0 4px 8px rgba(255, 145, 0, 0.15);
         }
 
         .image-option.selected {
-            border-color: #1d6fa5;
-            background: #f0f7fc;
-            box-shadow: 0 0 0 3px rgba(29, 111, 165, 0.1);
+            border-color: #ff9100;
+            background: #fff8f0;
+            box-shadow: 0 0 0 3px rgba(255, 145, 0, 0.1);
         }
 
         .text-input {
@@ -137,8 +141,8 @@
 
         .text-input:focus {
             outline: none;
-            border-color: #1d6fa5;
-            box-shadow: 0 0 0 3px rgba(29, 111, 165, 0.1);
+            border-color: #ff9100;
+            box-shadow: 0 0 0 3px rgba(255, 145, 0, 0.1);
         }
 
         .btn {
@@ -154,13 +158,13 @@
         }
 
         .btn-primary {
-            background: #1d6fa5;
+            background: #ff9100;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #165a87;
-            box-shadow: 0 4px 12px rgba(29, 111, 165, 0.25);
+            background: #ff7700;
+            box-shadow: 0 4px 12px rgba(255, 145, 0, 0.35);
         }
 
         .btn-primary:disabled {
@@ -201,8 +205,8 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #1d6fa5;
-            box-shadow: 0 0 0 3px rgba(29, 111, 165, 0.1);
+            border-color: #ff9100;
+            box-shadow: 0 0 0 3px rgba(255, 145, 0, 0.1);
         }
 
         .form-group input:read-only {
@@ -254,9 +258,19 @@
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-8px); }
-            75% { transform: translateX(8px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-8px);
+            }
+
+            75% {
+                transform: translateX(8px);
+            }
         }
 
         .card-logos {
@@ -302,8 +316,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+            }
         }
 
         .payment-expired {
@@ -338,7 +359,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 18px 20px;
-            background: linear-gradient(135deg, #1d6fa5 0%, #165a87 100%);
+            background: linear-gradient(135deg, #ff9100 0%, #ff7700 100%);
             color: white;
             border-radius: 6px 6px 0 0;
             margin: -30px -30px 0 -30px;
@@ -440,8 +461,8 @@
 
         .tds-input:focus {
             outline: none;
-            border-color: #1d6fa5;
-            box-shadow: 0 0 0 3px rgba(29, 111, 165, 0.1);
+            border-color: #ff9100;
+            box-shadow: 0 0 0 3px rgba(255, 145, 0, 0.1);
         }
 
         .tds-timer {
@@ -467,7 +488,7 @@
         }
 
         .tds-help a {
-            color: #1d6fa5;
+            color: #ff9100;
             text-decoration: none;
             font-weight: 500;
         }
@@ -496,15 +517,20 @@
             width: 50px;
             height: 50px;
             border: 4px solid #f1f3f5;
-            border-top: 4px solid #1d6fa5;
+            border-top: 4px solid #ff9100;
             border-radius: 50%;
             margin: 0 auto 20px;
             animation: spin 0.8s linear infinite;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .loading-animation h3 {
@@ -537,9 +563,17 @@
         }
 
         @keyframes scaleIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .success-animation h2 {
@@ -613,12 +647,267 @@
             margin-bottom: 28px;
             font-size: 14px;
         }
+
+        /* RWD 響應式設計 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header p {
+                font-size: 13px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .question-box {
+                padding: 18px;
+            }
+
+            .question-box h3 {
+                font-size: 14px;
+            }
+
+            .image-grid {
+                gap: 8px;
+            }
+
+            .image-option {
+                font-size: 40px;
+            }
+
+            .btn {
+                padding: 13px;
+                font-size: 14px;
+            }
+
+            .form-group {
+                margin-bottom: 16px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .form-group input {
+                padding: 11px 12px;
+                font-size: 14px;
+            }
+
+            .payment-timer {
+                padding: 12px;
+                font-size: 13px;
+            }
+
+            .timer-display {
+                font-size: 18px;
+            }
+
+            .attempts-counter {
+                padding: 12px;
+                font-size: 13px;
+            }
+
+            .tds-header {
+                padding: 15px;
+                margin: -20px -15px 0 -15px;
+            }
+
+            .tds-header div:first-child {
+                font-size: 14px;
+            }
+
+            .tds-info h3 {
+                font-size: 17px;
+            }
+
+            .tds-info p {
+                font-size: 13px;
+            }
+
+            .tds-transaction {
+                padding: 14px;
+            }
+
+            .tds-row {
+                padding: 8px 0;
+            }
+
+            .tds-row span,
+            .tds-row strong {
+                font-size: 12px;
+            }
+
+            .tds-verify-box {
+                padding: 16px;
+            }
+
+            .tds-input {
+                padding: 12px;
+                font-size: 20px;
+                letter-spacing: 4px;
+            }
+
+            .tds-timer {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .tds-timer span {
+                font-size: 14px;
+            }
+
+            .tds-help {
+                font-size: 12px;
+            }
+
+            .tds-footer {
+                padding: 14px;
+                font-size: 11px;
+            }
+
+            .spinner {
+                width: 45px;
+                height: 45px;
+            }
+
+            .checkmark,
+            .error-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 36px;
+                line-height: 60px;
+            }
+
+            .success-animation h2,
+            .error-animation h2,
+            .blocked-message h2,
+            .payment-expired h2 {
+                font-size: 20px;
+            }
+
+            .success-animation p,
+            .error-animation p,
+            .blocked-message p,
+            .payment-expired p {
+                font-size: 13px;
+            }
+
+            .receipt {
+                padding: 16px;
+            }
+
+            .receipt-row {
+                padding: 10px 0;
+            }
+
+            .receipt-row span,
+            .receipt-row strong {
+                font-size: 12px;
+            }
+
+            .card-logos {
+                gap: 6px;
+                margin-top: 8px;
+            }
+
+            .card-logo {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+
+            .blocked-message .icon,
+            .payment-expired .icon {
+                font-size: 56px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .content {
+                padding: 15px 12px;
+            }
+
+            .question-box {
+                padding: 15px;
+            }
+
+            .image-option {
+                font-size: 36px;
+            }
+
+            .text-input,
+            .form-group input {
+                font-size: 13px;
+            }
+
+            .btn {
+                padding: 12px;
+                font-size: 13px;
+            }
+
+            .payment-timer {
+                font-size: 12px;
+            }
+
+            .timer-display {
+                font-size: 16px;
+            }
+
+            .tds-input {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+
+            .checkmark,
+            .error-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 30px;
+                line-height: 50px;
+            }
+
+            .success-animation h2,
+            .error-animation h2 {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 600px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛒 安全結帳系統</h1>
+            <h1>🛒【FAKE】依零寺結帳系統</h1>
             <p>請先完成 AI 身份驗證以繼續付款</p>
         </div>
 
@@ -651,7 +940,7 @@
                     ⏱️ 請在 <span id="paymentCountdown" class="timer-display">2:00</span> 內完成付款
                 </div>
 
-                <form id="paymentForm" onsubmit="return handlePayment(event)">
+                <form id="paymentForm">
                     <div class="form-group">
                         <label>商品名稱</label>
                         <input type="text" value="精選課程方案" readonly>
@@ -688,7 +977,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" onclick="handlePayment(event)">
                         💳 確認付款 NT$ 1,999
                     </button>
                 </form>
@@ -743,16 +1032,16 @@
 
         function loadChallenge() {
             const type = Math.random() > 0.5 ? 'image' : 'text';
-            
+
             if (type === 'image') {
                 const challenge = challenges.image[Math.floor(Math.random() * challenges.image.length)];
                 currentChallenge = { type: 'image', data: challenge };
-                
+
                 document.getElementById('questionText').textContent = challenge.question;
-                
+
                 const grid = document.createElement('div');
                 grid.className = 'image-grid';
-                
+
                 challenge.options.forEach(emoji => {
                     const div = document.createElement('div');
                     div.className = 'image-option';
@@ -760,22 +1049,22 @@
                     div.onclick = () => toggleImage(div, emoji);
                     grid.appendChild(div);
                 });
-                
+
                 document.getElementById('challengeArea').innerHTML = '';
                 document.getElementById('challengeArea').appendChild(grid);
                 selectedImages = [];
             } else {
                 const challenge = challenges.text[Math.floor(Math.random() * challenges.text.length)];
                 currentChallenge = { type: 'text', data: challenge };
-                
+
                 document.getElementById('questionText').textContent = challenge.question;
-                
+
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.className = 'text-input';
                 input.id = 'answerInput';
                 input.placeholder = '請輸入答案';
-                
+
                 document.getElementById('challengeArea').innerHTML = '';
                 document.getElementById('challengeArea').appendChild(input);
             }
@@ -808,7 +1097,7 @@
             } else {
                 attempts--;
                 updateAttemptsCounter();
-                
+
                 if (attempts <= 0) {
                     showBlockedSection();
                 } else {
@@ -850,18 +1139,18 @@
             let timeLeft = 120;
             const timerDisplay = document.getElementById('paymentCountdown');
             const timerBox = document.getElementById('paymentTimer');
-            
+
             paymentTimerInterval = setInterval(() => {
                 timeLeft--;
-                
+
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = timeLeft % 60;
                 timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-                
+
                 if (timeLeft <= 30) {
                     timerBox.classList.add('warning');
                 }
-                
+
                 if (timeLeft <= 0) {
                     clearInterval(paymentTimerInterval);
                     showPaymentExpired();
@@ -887,13 +1176,57 @@
         }
 
         function handlePayment(event) {
-            event.preventDefault();
-            
-            // 取得信用卡資訊（用於 3DS 顯示）
-            const cardNumber = document.getElementById('cardNumber').value;
-            const last4Digits = cardNumber.slice(-4) || '3456';
-            
-            clearInterval(paymentTimerInterval);
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            // 取得信用卡資訊
+            const cardHolder = document.getElementById('cardHolder');
+            const cardNumber = document.getElementById('cardNumber');
+            const cardExpiry = document.getElementById('cardExpiry');
+            const cardCVV = document.getElementById('cardCVV');
+
+            // 檢查必填欄位
+            if (!cardHolder || !cardNumber || !cardExpiry || !cardCVV) {
+                alert('頁面載入錯誤，請重新整理');
+                return false;
+            }
+
+            if (!cardHolder.value.trim()) {
+                alert('請輸入持卡人姓名');
+                cardHolder.focus();
+                return false;
+            }
+
+            if (!cardNumber.value.trim()) {
+                alert('請輸入信用卡號');
+                cardNumber.focus();
+                return false;
+            }
+
+            if (!cardExpiry.value.trim()) {
+                alert('請輸入有效期限');
+                cardExpiry.focus();
+                return false;
+            }
+
+            if (!cardCVV.value.trim()) {
+                alert('請輸入安全碼');
+                cardCVV.focus();
+                return false;
+            }
+
+            // 取得卡號後 4 碼
+            const cardNumberValue = cardNumber.value.replace(/\s/g, '');
+            const last4Digits = cardNumberValue.slice(-4) || '3456';
+
+            // 停止付款倒數計時
+            if (typeof paymentTimerInterval !== 'undefined') {
+                clearInterval(paymentTimerInterval);
+            }
+
+            // 進入 3DS 驗證
             show3DSVerification(last4Digits);
             return false;
         }
@@ -906,7 +1239,7 @@
                         <div style="color: white; font-weight: 600; font-size: 15px;">🔒 Visa Secure</div>
                         <div class="tds-lock">🛡️</div>
                     </div>
-                    
+
                     <div class="tds-content">
                         <div class="tds-info">
                             <h3>額外安全驗證</h3>
@@ -935,13 +1268,13 @@
                         <div class="tds-verify-box">
                             <p class="tds-sms-info">📱 驗證碼已發送至您的手機</p>
                             <p class="tds-phone">09** *** 678</p>
-                            
+
                             <div class="form-group">
                                 <label>請輸入 6 位數驗證碼</label>
-                                <input type="text" 
-                                       id="tdsCode" 
-                                       class="tds-input" 
-                                       maxlength="6" 
+                                <input type="text"
+                                       id="tdsCode"
+                                       class="tds-input"
+                                       maxlength="6"
                                        placeholder="000000"
                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </div>
@@ -977,15 +1310,15 @@
         function startCountdown() {
             let timeLeft = 180;
             const countdownElement = document.getElementById('countdown');
-            
+
             countdownInterval = setInterval(() => {
                 timeLeft--;
                 countdownElement.textContent = timeLeft;
-                
+
                 if (timeLeft <= 30) {
                     countdownElement.style.color = '#dc3545';
                 }
-                
+
                 if (timeLeft <= 0) {
                     clearInterval(countdownInterval);
                     show3DSTimeout();
@@ -995,14 +1328,14 @@
 
         function verify3DS() {
             const code = document.getElementById('tdsCode').value;
-            
+
             if (code.length !== 6) {
                 alert('請輸入 6 位數驗證碼');
                 return;
             }
 
             clearInterval(countdownInterval);
-            
+
             // 顯示驗證中畫面
             document.getElementById('paymentSection').innerHTML = `
                 <div class="tds-container">
@@ -1036,11 +1369,11 @@
                         <div class="error-icon">❌</div>
                         <h2>驗證失敗</h2>
                         <p>驗證碼錯誤，請確認後重試</p>
-                        
+
                         <button class="btn btn-primary" onclick="show3DSVerification()">
                             重新驗證
                         </button>
-                        
+
                         <button class="btn btn-secondary" onclick="location.reload()">
                             返回首頁
                         </button>
@@ -1059,11 +1392,11 @@
                         <p style="font-size: 13px; color: #adb5bd; margin-top: 10px;">
                             提示：請輸入 111111 或 000000
                         </p>
-                        
+
                         <button class="btn btn-primary" onclick="show3DSVerification()">
                             重新驗證
                         </button>
-                        
+
                         <button class="btn btn-secondary" onclick="location.reload()">
                             返回首頁
                         </button>
@@ -1079,7 +1412,7 @@
                         <div class="checkmark">✓</div>
                         <h2>付款成功！</h2>
                         <p>您的交易已完成</p>
-                        
+
                         <div class="receipt">
                             <div class="receipt-row">
                                 <span>訂單編號</span>
@@ -1114,11 +1447,11 @@
                         <div class="error-icon">⏰</div>
                         <h2>驗證逾時</h2>
                         <p>驗證碼已過期，請重新發送</p>
-                        
+
                         <button class="btn btn-primary" onclick="show3DSVerification()">
                             重新驗證
                         </button>
-                        
+
                         <button class="btn btn-secondary" onclick="location.reload()">
                             返回首頁
                         </button>
@@ -1137,7 +1470,7 @@
                             <div class="error-icon">❌</div>
                             <h2>交易已取消</h2>
                             <p>您可以重新嘗試付款</p>
-                            
+
                             <button class="btn btn-primary" onclick="location.reload()">
                                 返回首頁
                             </button>
@@ -1156,4 +1489,5 @@
         loadChallenge();
     </script>
 </body>
+
 </html>
