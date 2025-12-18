@@ -258,19 +258,9 @@
         }
 
         @keyframes shake {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-8px);
-            }
-
-            75% {
-                transform: translateX(8px);
-            }
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
         }
 
         .card-logos {
@@ -288,7 +278,6 @@
             font-weight: 500;
         }
 
-        /* 付款倒數計時 */
         .payment-timer {
             background: #fff9e6;
             border: 1px solid #ffb700;
@@ -316,15 +305,8 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.85;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
         }
 
         .payment-expired {
@@ -348,7 +330,6 @@
             margin-bottom: 20px;
         }
 
-        /* 3DS 驗證樣式 */
         .tds-container {
             max-width: 460px;
             margin: 0 auto;
@@ -363,10 +344,6 @@
             color: white;
             border-radius: 6px 6px 0 0;
             margin: -30px -30px 0 -30px;
-        }
-
-        .tds-header img {
-            height: 22px;
         }
 
         .tds-lock {
@@ -507,7 +484,6 @@
             border: 1px solid #e9ecef;
         }
 
-        /* 載入動畫 */
         .loading-animation {
             text-align: center;
             padding: 60px 20px;
@@ -524,13 +500,8 @@
         }
 
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .loading-animation h3 {
@@ -544,7 +515,6 @@
             font-size: 14px;
         }
 
-        /* 成功動畫 */
         .success-animation {
             text-align: center;
             padding: 40px 20px;
@@ -563,17 +533,9 @@
         }
 
         @keyframes scaleIn {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.08);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(0); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
         }
 
         .success-animation h2 {
@@ -619,7 +581,11 @@
             font-weight: 600;
         }
 
-        /* 錯誤動畫 */
+        .receipt-row.auth-code strong {
+            color: #ff9100;
+            font-weight: 700;
+        }
+
         .error-animation {
             text-align: center;
             padding: 40px 20px;
@@ -648,258 +614,34 @@
             font-size: 14px;
         }
 
-        /* RWD 響應式設計 */
-        @media (max-width: 768px) {
+        @media print {
             body {
-                padding: 10px;
+                background: white;
             }
-
             .container {
-                max-width: 100%;
+                box-shadow: none;
                 border-radius: 0;
             }
-
             .header {
-                padding: 20px 15px;
+                background: linear-gradient(135deg, #ff9100 0%, #ff7700 100%);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
-
-            .header h1 {
-                font-size: 20px;
-            }
-
-            .header p {
-                font-size: 13px;
-            }
-
-            .content {
-                padding: 20px 15px;
-            }
-
-            .question-box {
-                padding: 18px;
-            }
-
-            .question-box h3 {
-                font-size: 14px;
-            }
-
-            .image-grid {
-                gap: 8px;
-            }
-
-            .image-option {
-                font-size: 40px;
-            }
-
             .btn {
-                padding: 13px;
-                font-size: 14px;
-            }
-
-            .form-group {
-                margin-bottom: 16px;
-            }
-
-            .form-group label {
-                font-size: 13px;
-                margin-bottom: 6px;
-            }
-
-            .form-group input {
-                padding: 11px 12px;
-                font-size: 14px;
-            }
-
-            .payment-timer {
-                padding: 12px;
-                font-size: 13px;
-            }
-
-            .timer-display {
-                font-size: 18px;
-            }
-
-            .attempts-counter {
-                padding: 12px;
-                font-size: 13px;
-            }
-
-            .tds-header {
-                padding: 15px;
-                margin: -20px -15px 0 -15px;
-            }
-
-            .tds-header div:first-child {
-                font-size: 14px;
-            }
-
-            .tds-info h3 {
-                font-size: 17px;
-            }
-
-            .tds-info p {
-                font-size: 13px;
-            }
-
-            .tds-transaction {
-                padding: 14px;
-            }
-
-            .tds-row {
-                padding: 8px 0;
-            }
-
-            .tds-row span,
-            .tds-row strong {
-                font-size: 12px;
-            }
-
-            .tds-verify-box {
-                padding: 16px;
-            }
-
-            .tds-input {
-                padding: 12px;
-                font-size: 20px;
-                letter-spacing: 4px;
-            }
-
-            .tds-timer {
-                padding: 10px;
-                font-size: 12px;
-            }
-
-            .tds-timer span {
-                font-size: 14px;
-            }
-
-            .tds-help {
-                font-size: 12px;
-            }
-
-            .tds-footer {
-                padding: 14px;
-                font-size: 11px;
-            }
-
-            .spinner {
-                width: 45px;
-                height: 45px;
-            }
-
-            .checkmark,
-            .error-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 36px;
-                line-height: 60px;
-            }
-
-            .success-animation h2,
-            .error-animation h2,
-            .blocked-message h2,
-            .payment-expired h2 {
-                font-size: 20px;
-            }
-
-            .success-animation p,
-            .error-animation p,
-            .blocked-message p,
-            .payment-expired p {
-                font-size: 13px;
-            }
-
-            .receipt {
-                padding: 16px;
-            }
-
-            .receipt-row {
-                padding: 10px 0;
-            }
-
-            .receipt-row span,
-            .receipt-row strong {
-                font-size: 12px;
-            }
-
-            .card-logos {
-                gap: 6px;
-                margin-top: 8px;
-            }
-
-            .card-logo {
-                font-size: 10px;
-                padding: 3px 8px;
-            }
-
-            .blocked-message .icon,
-            .payment-expired .icon {
-                font-size: 56px;
+                display: none;
             }
         }
 
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 18px;
-            }
-
-            .header p {
-                font-size: 12px;
-            }
-
-            .content {
-                padding: 15px 12px;
-            }
-
-            .question-box {
-                padding: 15px;
-            }
-
-            .image-option {
-                font-size: 36px;
-            }
-
-            .text-input,
-            .form-group input {
-                font-size: 13px;
-            }
-
-            .btn {
-                padding: 12px;
-                font-size: 13px;
-            }
-
-            .payment-timer {
-                font-size: 12px;
-            }
-
-            .timer-display {
-                font-size: 16px;
-            }
-
-            .tds-input {
-                font-size: 18px;
-                letter-spacing: 3px;
-            }
-
-            .checkmark,
-            .error-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 30px;
-                line-height: 50px;
-            }
-
-            .success-animation h2,
-            .error-animation h2 {
-                font-size: 18px;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .container {
-                max-width: 600px;
-            }
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .container { max-width: 100%; border-radius: 0; }
+            .header { padding: 20px 15px; }
+            .header h1 { font-size: 20px; }
+            .header p { font-size: 13px; }
+            .content { padding: 20px 15px; }
+            .receipt { padding: 16px; }
+            .receipt-row { padding: 10px 0; }
+            .receipt-row span, .receipt-row strong { font-size: 12px; }
         }
     </style>
 </head>
@@ -912,45 +654,34 @@
         </div>
 
         <div class="content">
-            <!-- 驗證區域 -->
             <div class="verification-section active" id="verificationSection">
                 <div class="attempts-counter" id="attemptsCounter">
                     剩餘驗證次數:<strong>5/5</strong>
                 </div>
-
                 <div id="errorMessage"></div>
-
                 <div class="question-box" id="questionBox">
                     <h3 id="questionText">正在載入驗證...</h3>
                     <div id="challengeArea"></div>
                 </div>
-
-                <button class="btn btn-primary" id="verifyBtn" onclick="checkAnswer()">
-                    送出驗證
-                </button>
+                <button class="btn btn-primary" id="verifyBtn" onclick="checkAnswer()">送出驗證</button>
             </div>
 
-            <!-- 付款區域 -->
             <div class="payment-section" id="paymentSection">
                 <div class="success-message">
                     ✓ 身份驗證完成,您的交易環境已加密保護
                 </div>
-
                 <div class="payment-timer" id="paymentTimer">
                     ⏱ 安全連線有效時間: <span id="paymentCountdown" class="timer-display">2:00</span>
                 </div>
-
                 <form id="paymentForm">
                     <div class="form-group">
                         <label>產品項目</label>
                         <input type="text" value="企業專業方案" readonly>
                     </div>
-
                     <div class="form-group">
                         <label>交易金額</label>
                         <input type="text" value="NT$ 1,999" readonly>
                     </div>
-
                     <div class="form-group">
                         <label>信用卡號 *</label>
                         <input type="text" required placeholder="1234 5678 9012 3456" maxlength="19" id="cardNumber" oninput="formatCardNumber(this)" onkeyup="autoFocusExpiry(this)">
@@ -960,7 +691,6 @@
                             <span class="card-logo">JCB</span>
                         </div>
                     </div>
-
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                         <div class="form-group">
                             <label>有效期限 *</label>
@@ -971,18 +701,14 @@
                             <input type="text" required placeholder="CVV" maxlength="3" id="cardCVV" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                         </div>
                     </div>
-
-                    <button type="button" class="btn btn-primary" onclick="handlePayment(event)">
-                        確認交易 NT$ 1,999
-                    </button>
+                    <button type="button" class="btn btn-primary" onclick="handlePayment(event)">確認交易 NT$ 1,999</button>
                 </form>
             </div>
 
-            <!-- 封鎖區域 -->
             <div class="verification-section" id="blockedSection">
                 <div class="blocked-message">
-                    <div class="icon">🔒</div>
-                    <h2>安全驗證逾時鎖定</h2>
+                    <div class="icon">🔐</div>
+                    <h2>安全驗證過時被鎖定</h2>
                     <p>基於安全考量,此交易已被系統暫時限制</p>
                     <p style="margin-top: 10px; font-size: 13px; color: #adb5bd;">
                         請聯繫客戶服務部門或稍後重新嘗試
@@ -996,58 +722,43 @@
         let attempts = 5;
         let currentChallenge = null;
         let selectedImages = [];
+        let currentAuthCode = '';
+        let currentLast4Digits = '3456';
 
         const challenges = {
             image: [
                 {
-                    question: "請選出所有「辦公用品」類別的圖示",
-                    options: ["📎", "🎮", "📊", "🌳", "✏️", "🎨", "🍔", "⚽", "🌸"],
-                    correct: ["📎", "📊", "✏️"]
+                    question: "請選出所有「交通工具」類別的圖示",
+                    options: ["🚗", "🌳", "🚁", "🎨", "✈️", "🍎", "🚢", "🎮", "🌸"],
+                    correct: ["🚗", "🚁", "✈️", "🚢"]
                 },
                 {
-                    question: "請選出所有「通訊工具」相關圖示",
-                    options: ["📱", "🌳", "💻", "🎨", "📧", "🎮", "🍔", "⚽", "🌸"],
-                    correct: ["📱", "💻", "📧"]
+                    question: "請選出所有「動物」類別的圖示",
+                    options: ["🐶", "🌳", "🐱", "🎨", "🐦", "🏠", "🐠", "🎮", "🌸"],
+                    correct: ["🐶", "🐱", "🐦", "🐠"]
                 },
                 {
-                    question: "請選出所有「商務場景」相關圖示",
-                    options: ["💼", "🌳", "🏢", "🌸", "📊", "🎨", "🍔", "⚽", "🎮"],
-                    correct: ["💼", "🏢", "📊"]
+                    question: "請選出所有「植物」類別的圖示",
+                    options: ["🌳", "🎮", "🌻", "🏠", "🌿", "🚗", "🌹", "🍎", "⚽"],
+                    correct: ["🌳", "🌻", "🌿", "🌹"]
                 }
             ],
             text: [
                 { question: "25 + 15 等於多少?", answer: "40" },
-                { question: "請輸入「安全驗證」四個字", answer: "安全驗證" },
                 { question: "100 - 35 等於多少?", answer: "65" },
                 { question: "一年有幾季?", answer: "4" },
-                { question: "8 × 7 等於多少?", answer: "56" },
-                { question: "請輸入「企業」兩個字", answer: "企業" },
-                { question: "72 - 28 等於多少?", answer: "44" },
-                { question: "9 × 6 等於多少?", answer: "54" },
-                { question: "45 + 23 等於多少?", answer: "68" },
-                { question: "7 × 8 等於多少?", answer: "56" },
-                { question: "90 - 47 等於多少?", answer: "43" },
-                { question: "6 × 9 等於多少?", answer: "54" },
-                { question: "台灣的首都是?", answer: "台北" },
-                { question: "一周有幾天?", answer: "7" },
-                { question: "一年有幾個月?", answer: "12" },
-                { question: "一天有幾小時?", answer: "24" },
-                { question: "台灣的貨幣單位是?(請輸入兩個字)", answer: "新台幣" }
+                { question: "8 × 7 等於多少?", answer: "56" }
             ]
         };
 
         function loadChallenge() {
             const type = Math.random() > 0.5 ? 'image' : 'text';
-
             if (type === 'image') {
-                const challenge = challenges.image[Math.floor(Math.random() * challenges.image.length)];
+                const challenge = challenges.image[0];
                 currentChallenge = { type: 'image', data: challenge };
-
                 document.getElementById('questionText').textContent = challenge.question;
-
                 const grid = document.createElement('div');
                 grid.className = 'image-grid';
-
                 challenge.options.forEach(emoji => {
                     const div = document.createElement('div');
                     div.className = 'image-option';
@@ -1055,22 +766,18 @@
                     div.onclick = () => toggleImage(div, emoji);
                     grid.appendChild(div);
                 });
-
                 document.getElementById('challengeArea').innerHTML = '';
                 document.getElementById('challengeArea').appendChild(grid);
                 selectedImages = [];
             } else {
                 const challenge = challenges.text[Math.floor(Math.random() * challenges.text.length)];
                 currentChallenge = { type: 'text', data: challenge };
-
                 document.getElementById('questionText').textContent = challenge.question;
-
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.className = 'text-input';
                 input.id = 'answerInput';
                 input.placeholder = '請輸入答案';
-
                 document.getElementById('challengeArea').innerHTML = '';
                 document.getElementById('challengeArea').appendChild(input);
             }
@@ -1088,7 +795,6 @@
 
         function checkAnswer() {
             let isCorrect = false;
-
             if (currentChallenge.type === 'image') {
                 const correct = currentChallenge.data.correct.sort();
                 const selected = selectedImages.sort();
@@ -1097,13 +803,11 @@
                 const userAnswer = document.getElementById('answerInput').value.trim();
                 isCorrect = userAnswer === currentChallenge.data.answer;
             }
-
             if (isCorrect) {
                 showPaymentSection();
             } else {
                 attempts--;
                 updateAttemptsCounter();
-
                 if (attempts <= 0) {
                     showBlockedSection();
                 } else {
@@ -1124,9 +828,7 @@
         function showError(message) {
             const errorDiv = document.getElementById('errorMessage');
             errorDiv.innerHTML = `<div class="error-message">${message}</div>`;
-            setTimeout(() => {
-                errorDiv.innerHTML = '';
-            }, 3000);
+            setTimeout(() => { errorDiv.innerHTML = ''; }, 3000);
         }
 
         function showPaymentSection() {
@@ -1145,18 +847,14 @@
             let timeLeft = 120;
             const timerDisplay = document.getElementById('paymentCountdown');
             const timerBox = document.getElementById('paymentTimer');
-
             paymentTimerInterval = setInterval(() => {
                 timeLeft--;
-
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = timeLeft % 60;
                 timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
                 if (timeLeft <= 30) {
                     timerBox.classList.add('warning');
                 }
-
                 if (timeLeft <= 0) {
                     clearInterval(paymentTimerInterval);
                     showPaymentExpired();
@@ -1174,9 +872,7 @@
                     <p style="font-size: 13px; color: #adb5bd;">
                         請重新進行身份驗證以繼續交易
                     </p>
-                    <button class="btn btn-primary" onclick="location.reload()">
-                        重新開始驗證
-                    </button>
+                    <button class="btn btn-primary" onclick="location.reload()">重新開始驗證</button>
                 </div>
             `;
         }
@@ -1186,66 +882,50 @@
                 event.preventDefault();
                 event.stopPropagation();
             }
-
-            // 取得信用卡資訊
             const cardNumber = document.getElementById('cardNumber');
             const cardExpiry = document.getElementById('cardExpiry');
             const cardCVV = document.getElementById('cardCVV');
-
-            // 檢查必填欄位
-            if (!cardNumber || !cardExpiry || !cardCVV) {
-                alert('頁面載入錯誤,請重新整理');
-                return false;
-            }
 
             if (!cardNumber.value.trim()) {
                 alert('請輸入信用卡號');
                 cardNumber.focus();
                 return false;
             }
-
             if (!cardExpiry.value.trim()) {
                 alert('請輸入有效期限');
                 cardExpiry.focus();
                 return false;
             }
-
             if (!cardCVV.value.trim()) {
                 alert('請輸入安全碼');
                 cardCVV.focus();
                 return false;
             }
 
-            // 取得卡號後 4 碼
             const cardNumberValue = cardNumber.value.replace(/\s/g, '');
-            const last4Digits = cardNumberValue.slice(-4) || '3456';
+            currentLast4Digits = cardNumberValue.slice(-4) || '3456';
 
-            // 停止付款倒數計時
             if (typeof paymentTimerInterval !== 'undefined') {
                 clearInterval(paymentTimerInterval);
             }
 
-            // 進入 3DS 驗證
-            show3DSVerification(last4Digits);
+            show3DSVerification(currentLast4Digits);
             return false;
         }
 
         function show3DSVerification(last4 = '3456') {
-            currentLast4Digits = last4; // 儲存到全域變數
             const paymentSection = document.getElementById('paymentSection');
             paymentSection.innerHTML = `
                 <div class="tds-container">
                     <div class="tds-header">
-                        <div style="color: white; font-weight: 600; font-size: 15px;">🔒 Visa Secure</div>
+                        <div style="color: white; font-weight: 600; font-size: 15px;">🔐 Visa Secure</div>
                         <div class="tds-lock">🛡️</div>
                     </div>
-
                     <div class="tds-content">
                         <div class="tds-info">
                             <h3>銀行安全驗證</h3>
                             <p>您的發卡銀行要求進行額外的交易驗證</p>
                         </div>
-
                         <div class="tds-transaction">
                             <div class="tds-row">
                                 <span>收款商家</span>
@@ -1264,63 +944,41 @@
                                 <strong>${new Date().toLocaleDateString('zh-TW')}</strong>
                             </div>
                         </div>
-
                         <div class="tds-verify-box">
                             <p class="tds-sms-info">簡訊驗證碼已發送至您的註冊手機</p>
                             <p class="tds-phone">手機號碼: 09** *** 678</p>
-
                             <div class="form-group">
                                 <label>請輸入 6 位數驗證碼</label>
-                                <input type="text"
-                                       id="tdsCode"
-                                       class="tds-input"
-                                       maxlength="6"
-                                       placeholder="______"
-                                       oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <input type="text" id="tdsCode" class="tds-input" maxlength="6" placeholder="______" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </div>
-
                             <div class="tds-timer" id="tdsTimer">
                                 驗證碼有效期限: <span id="countdown">180</span> 秒
                             </div>
-
-                            <button class="btn btn-primary" onclick="verify3DS()">
-                                送出驗證
-                            </button>
-
-                            <button class="btn btn-secondary" onclick="cancel3DS()">
-                                取消本次交易
-                            </button>
-
+                            <button class="btn btn-primary" onclick="verify3DS()">送出驗證</button>
+                            <button class="btn btn-secondary" onclick="cancel3DS()">取消本次交易</button>
                             <p class="tds-help">
                                 <small>測試說明: 輸入 <strong>任意6位數字</strong> 驗證成功 / <strong>000000</strong> 驗證失敗</small>
                             </p>
                         </div>
-
                         <div class="tds-footer">
-                            <p>🔐 此驗證程序由您的發卡銀行提供,確保交易安全無虞</p>
+                            <p>🔒 此驗證程序由您的發卡銀行提供,確保交易安全無虞</p>
                         </div>
                     </div>
                 </div>
             `;
-
             startCountdown();
         }
 
         let countdownInterval;
-        let currentLast4Digits = '3456'; // 儲存卡號後四碼
-        
         function startCountdown() {
             let timeLeft = 180;
             const countdownElement = document.getElementById('countdown');
-
             countdownInterval = setInterval(() => {
                 timeLeft--;
                 countdownElement.textContent = timeLeft;
-
                 if (timeLeft <= 30) {
                     countdownElement.style.color = '#dc3545';
                 }
-
                 if (timeLeft <= 0) {
                     clearInterval(countdownInterval);
                     show3DSTimeout();
@@ -1330,15 +988,11 @@
 
         function verify3DS() {
             const code = document.getElementById('tdsCode').value;
-
             if (code.length !== 6) {
                 alert('請輸入 6 位數驗證碼');
                 return;
             }
-
             clearInterval(countdownInterval);
-
-            // 顯示驗證中畫面
             document.getElementById('paymentSection').innerHTML = `
                 <div class="tds-container">
                     <div class="loading-animation">
@@ -1348,14 +1002,10 @@
                     </div>
                 </div>
             `;
-
-            // 模擬驗證處理
             setTimeout(() => {
                 if (code === '000000') {
-                    // 驗證失敗
                     show3DSFailed();
                 } else {
-                    // 任意其他6位數字都驗證成功
                     show3DSSuccess();
                 }
             }, 2000);
@@ -1368,40 +1018,90 @@
                         <div class="error-icon">✗</div>
                         <h2>驗證未通過</h2>
                         <p>驗證碼輸入錯誤,請確認後重新嘗試</p>
-
-                        <button class="btn btn-primary" onclick="show3DSVerification()">
-                            重新驗證
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="location.reload()">
-                            返回首頁
-                        </button>
+                        <button class="btn btn-primary" onclick="show3DSVerification('${currentLast4Digits}')">重新驗證</button>
+                        <button class="btn btn-secondary" onclick="location.reload()">返回首頁</button>
                     </div>
                 </div>
             `;
         }
 
-        function show3DSError() {
+        function show3DSSuccess() {
+            currentAuthCode = generateAuthCode();
+            const transactionId = generateTransactionId();
             document.getElementById('paymentSection').innerHTML = `
                 <div class="tds-container">
-                    <div class="error-animation">
-                        <div class="error-icon">⚠️</div>
-                        <h2>驗證碼不正確</h2>
-                        <p>請輸入正確的 6 位數驗證碼</p>
-                        <p style="font-size: 13px; color: #adb5bd; margin-top: 10px;">
-                            提示:輸入任意6位數字(除000000外)即可成功
-                        </p>
-
-                        <button class="btn btn-primary" onclick="show3DSVerification()">
-                            重新驗證
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="location.reload()">
-                            返回首頁
-                        </button>
+                    <div class="success-animation">
+                        <div class="checkmark">✓</div>
+                        <h2>交易完成</h2>
+                        <p>您的付款已成功處理</p>
+                        <div class="receipt">
+                            <div class="receipt-row">
+                                <span>交易編號</span>
+                                <strong>#${transactionId}</strong>
+                            </div>
+                            <div class="receipt-row">
+                                <span>交易金額</span>
+                                <strong>NT$ 1,999</strong>
+                            </div>
+                            <div class="receipt-row">
+                                <span>交易時間</span>
+                                <strong>${new Date().toLocaleString('zh-TW')}</strong>
+                            </div>
+                            <div class="receipt-row">
+                                <span>付款方式</span>
+                                <strong>信用卡 (**** ${currentLast4Digits})</strong>
+                            </div>
+                            <div class="receipt-row auth-code">
+                                <span>授權碼</span>
+                                <strong>${currentAuthCode}</strong>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="printReceipt()">列印交易明細</button>
+                        <button class="btn btn-secondary" onclick="location.reload()">返回首頁</button>
                     </div>
                 </div>
             `;
+        }
+
+        function show3DSTimeout() {
+            document.getElementById('paymentSection').innerHTML = `
+                <div class="tds-container">
+                    <div class="error-animation">
+                        <div class="error-icon">⏱</div>
+                        <h2>驗證逾時</h2>
+                        <p>驗證碼已超過有效期限,請重新獲取</p>
+                        <button class="btn btn-primary" onclick="show3DSVerification('${currentLast4Digits}')">重新驗證</button>
+                        <button class="btn btn-secondary" onclick="location.reload()">返回首頁</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function cancel3DS() {
+            clearInterval(countdownInterval);
+            if (confirm('確定要取消此筆交易嗎?')) {
+                clearInterval(paymentTimerInterval);
+                document.getElementById('paymentSection').innerHTML = `
+                    <div class="tds-container">
+                        <div class="error-animation">
+                            <div class="error-icon">✗</div>
+                            <h2>交易已取消</h2>
+                            <p>您已取消本次付款交易</p>
+                            <button class="btn btn-primary" onclick="location.reload()">返回首頁</button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function generateAuthCode() {
+            const prefix = ['A', 'B', 'C', 'D'][Math.floor(Math.random() * 4)];
+            const numbers = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+            return `${prefix}${numbers}`;
+        }
+
+        function generateTransactionId() {
+            return Math.random().toString(36).substr(2, 9).toUpperCase();
         }
 
         function formatCardNumber(input) {
@@ -1411,7 +1111,6 @@
         }
 
         function autoFocusExpiry(input) {
-            // 移除空格後檢查長度
             const value = input.value.replace(/\s/g, '');
             if (value.length === 16) {
                 const expiryInput = document.getElementById('cardExpiry');
@@ -1430,7 +1129,6 @@
         }
 
         function autoFocusCVV(input) {
-            // 檢查是否已輸入完整的 MM/YY 格式
             if (input.value.length === 5) {
                 const cvvInput = document.getElementById('cardCVV');
                 if (cvvInput) {
@@ -1439,85 +1137,8 @@
             }
         }
 
-        function show3DSSuccess() {
-            document.getElementById('paymentSection').innerHTML = `
-                <div class="tds-container">
-                    <div class="success-animation">
-                        <div class="checkmark">✓</div>
-                        <h2>交易完成</h2>
-                        <p>您的付款已成功處理</p>
-
-                        <div class="receipt">
-                            <div class="receipt-row">
-                                <span>交易編號</span>
-                                <strong>#${Math.random().toString(36).substr(2, 9).toUpperCase()}</strong>
-                            </div>
-                            <div class="receipt-row">
-                                <span>交易金額</span>
-                                <strong>NT$ 1,999</strong>
-                            </div>
-                            <div class="receipt-row">
-                                <span>交易時間</span>
-                                <strong>${new Date().toLocaleString('zh-TW')}</strong>
-                            </div>
-                            <div class="receipt-row">
-                                <span>付款方式</span>
-                                <strong>信用卡 (**** ${currentLast4Digits})</strong>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-primary" onclick="window.print()">
-                            列印交易明細
-                        </button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function show3DSTimeout() {
-            document.getElementById('paymentSection').innerHTML = `
-                <div class="tds-container">
-                    <div class="error-animation">
-                        <div class="error-icon">⏱</div>
-                        <h2>驗證逾時</h2>
-                        <p>驗證碼已超過有效期限,請重新取得</p>
-
-                        <button class="btn btn-primary" onclick="show3DSVerification()">
-                            重新驗證
-                        </button>
-
-                        <button class="btn btn-secondary" onclick="location.reload()">
-                            返回首頁
-                        </button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function cancel3DS() {
-            clearInterval(countdownInterval);
-            if (confirm('確定要取消此筆交易嗎?')) {
-                clearInterval(paymentTimerInterval);
-                document.getElementById('paymentSection').innerHTML = `
-                    <div class="tds-container">
-                        <div class="error-animation">
-                            <div class="error-icon">✗</div>
-                            <h2>交易已取消</h2>
-                            <p>您已取消本次付款交易</p>
-
-                            <button class="btn btn-primary" onclick="location.reload()">
-                                返回首頁
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        function resend3DS() {
-            alert('✅ 驗證碼已重新發送!\n\n(這是示範功能)');
-            clearInterval(countdownInterval);
-            startCountdown();
+        function printReceipt() {
+            window.print();
         }
 
         loadChallenge();
