@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 驗證付款系統</title>
+    <title>【DEMO】好好結帳</title>
     <style>
         * {
             margin: 0;
@@ -907,15 +907,15 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛒【FAKE】依零寺結帳系統</h1>
-            <p>請先完成 AI 身份驗證以繼續付款</p>
+            <h1>💳【DEMO】好好結帳</h1>
+            <p>為確保交易安全,請完成身份驗證程序</p>
         </div>
 
         <div class="content">
             <!-- 驗證區域 -->
             <div class="verification-section active" id="verificationSection">
                 <div class="attempts-counter" id="attemptsCounter">
-                    剩餘驗證次數：<strong>5/5</strong>
+                    剩餘驗證次數:<strong>5/5</strong>
                 </div>
 
                 <div id="errorMessage"></div>
@@ -933,32 +933,27 @@
             <!-- 付款區域 -->
             <div class="payment-section" id="paymentSection">
                 <div class="success-message">
-                    ✅ 驗證成功！您可以安全地完成付款
+                    ✓ 身份驗證完成,您的交易環境已加密保護
                 </div>
 
                 <div class="payment-timer" id="paymentTimer">
-                    ⏱️ 請在 <span id="paymentCountdown" class="timer-display">2:00</span> 內完成付款
+                    ⏱ 安全連線有效時間: <span id="paymentCountdown" class="timer-display">2:00</span>
                 </div>
 
                 <form id="paymentForm">
                     <div class="form-group">
-                        <label>商品名稱</label>
-                        <input type="text" value="精選課程方案" readonly>
+                        <label>產品項目</label>
+                        <input type="text" value="企業專業方案" readonly>
                     </div>
 
                     <div class="form-group">
-                        <label>付款金額</label>
+                        <label>交易金額</label>
                         <input type="text" value="NT$ 1,999" readonly>
                     </div>
 
                     <div class="form-group">
-                        <label>持卡人姓名 *</label>
-                        <input type="text" required placeholder="請輸入持卡人姓名" id="cardHolder">
-                    </div>
-
-                    <div class="form-group">
                         <label>信用卡號 *</label>
-                        <input type="text" required placeholder="1234 5678 9012 3456" maxlength="19" id="cardNumber">
+                        <input type="text" required placeholder="1234 5678 9012 3456" maxlength="19" id="cardNumber" oninput="formatCardNumber(this)" onkeyup="autoFocusExpiry(this)">
                         <div class="card-logos">
                             <span class="card-logo">VISA</span>
                             <span class="card-logo">MasterCard</span>
@@ -969,16 +964,16 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                         <div class="form-group">
                             <label>有效期限 *</label>
-                            <input type="text" required placeholder="MM/YY" maxlength="5" id="cardExpiry">
+                            <input type="text" required placeholder="MM/YY" maxlength="5" id="cardExpiry" oninput="formatExpiry(this)" onkeyup="autoFocusCVV(this)">
                         </div>
                         <div class="form-group">
                             <label>安全碼 *</label>
-                            <input type="text" required placeholder="CVV" maxlength="3" id="cardCVV">
+                            <input type="text" required placeholder="CVV" maxlength="3" id="cardCVV" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                         </div>
                     </div>
 
                     <button type="button" class="btn btn-primary" onclick="handlePayment(event)">
-                        💳 確認付款 NT$ 1,999
+                        確認交易 NT$ 1,999
                     </button>
                 </form>
             </div>
@@ -986,11 +981,11 @@
             <!-- 封鎖區域 -->
             <div class="verification-section" id="blockedSection">
                 <div class="blocked-message">
-                    <div class="icon">🚫</div>
-                    <h2>驗證失敗次數過多</h2>
-                    <p>為了保護交易安全，此頁面已被暫時鎖定</p>
+                    <div class="icon">🔒</div>
+                    <h2>安全驗證逾時鎖定</h2>
+                    <p>基於安全考量,此交易已被系統暫時限制</p>
                     <p style="margin-top: 10px; font-size: 13px; color: #adb5bd;">
-                        請稍後再試或聯繫客服人員
+                        請聯繫客戶服務部門或稍後重新嘗試
                     </p>
                 </div>
             </div>
@@ -1005,28 +1000,39 @@
         const challenges = {
             image: [
                 {
-                    question: "請選出所有「水果」",
-                    options: ["🍎", "🍕", "🍌", "🚗", "🍇", "🏠", "🍊", "⚽", "🍉"],
-                    correct: ["🍎", "🍌", "🍇", "🍊", "🍉"]
+                    question: "請選出所有「辦公用品」類別的圖示",
+                    options: ["📎", "🎮", "📊", "🌳", "✏️", "🎨", "🍔", "⚽", "🌸"],
+                    correct: ["📎", "📊", "✏️"]
                 },
                 {
-                    question: "請選出所有「動物」",
-                    options: ["🐶", "🌳", "🐱", "🏀", "🐼", "🎮", "🦁", "📱", "🐯"],
-                    correct: ["🐶", "🐱", "🐼", "🦁", "🐯"]
+                    question: "請選出所有「通訊工具」相關圖示",
+                    options: ["📱", "🌳", "💻", "🎨", "📧", "🎮", "🍔", "⚽", "🌸"],
+                    correct: ["📱", "💻", "📧"]
                 },
                 {
-                    question: "請選出所有「交通工具」",
-                    options: ["🚗", "🍔", "✈️", "🌸", "🚂", "💻", "🚢", "🎨", "🚁"],
-                    correct: ["🚗", "✈️", "🚂", "🚢", "🚁"]
+                    question: "請選出所有「商務場景」相關圖示",
+                    options: ["💼", "🌳", "🏢", "🌸", "📊", "🎨", "🍔", "⚽", "🎮"],
+                    correct: ["💼", "🏢", "📊"]
                 }
             ],
             text: [
-                { question: "3 + 7 等於多少？", answer: "10" },
-                { question: "一周有幾天？", answer: "7" },
-                { question: "請輸入「驗證」這兩個字", answer: "驗證" },
-                { question: "10 - 4 等於多少？", answer: "6" },
-                { question: "台灣的首都是？", answer: "台北" },
-                { question: "一年有幾個月？", answer: "12" }
+                { question: "25 + 15 等於多少?", answer: "40" },
+                { question: "請輸入「安全驗證」四個字", answer: "安全驗證" },
+                { question: "100 - 35 等於多少?", answer: "65" },
+                { question: "一年有幾季?", answer: "4" },
+                { question: "8 × 7 等於多少?", answer: "56" },
+                { question: "請輸入「企業」兩個字", answer: "企業" },
+                { question: "72 - 28 等於多少?", answer: "44" },
+                { question: "9 × 6 等於多少?", answer: "54" },
+                { question: "45 + 23 等於多少?", answer: "68" },
+                { question: "7 × 8 等於多少?", answer: "56" },
+                { question: "90 - 47 等於多少?", answer: "43" },
+                { question: "6 × 9 等於多少?", answer: "54" },
+                { question: "台灣的首都是?", answer: "台北" },
+                { question: "一周有幾天?", answer: "7" },
+                { question: "一年有幾個月?", answer: "12" },
+                { question: "一天有幾小時?", answer: "24" },
+                { question: "台灣的貨幣單位是?(請輸入兩個字)", answer: "新台幣" }
             ]
         };
 
@@ -1101,7 +1107,7 @@
                 if (attempts <= 0) {
                     showBlockedSection();
                 } else {
-                    showError('❌ 驗證失敗，請重試');
+                    showError('✗ 驗證失敗,請重新嘗試');
                     loadChallenge();
                 }
             }
@@ -1109,7 +1115,7 @@
 
         function updateAttemptsCounter() {
             const counter = document.getElementById('attemptsCounter');
-            counter.innerHTML = `剩餘驗證次數：<strong>${attempts}/5</strong>`;
+            counter.innerHTML = `剩餘驗證次數:<strong>${attempts}/5</strong>`;
             if (attempts <= 2) {
                 counter.classList.add('danger');
             }
@@ -1162,14 +1168,14 @@
             const paymentSection = document.getElementById('paymentSection');
             paymentSection.innerHTML = `
                 <div class="payment-expired">
-                    <div class="icon">⏰</div>
-                    <h2>付款時間已逾期</h2>
-                    <p>為了保護您的交易安全，付款頁面已過期</p>
+                    <div class="icon">⏱</div>
+                    <h2>安全連線已逾時</h2>
+                    <p>為確保交易安全,此付款連線已自動關閉</p>
                     <p style="font-size: 13px; color: #adb5bd;">
-                        請重新進行驗證以繼續付款
+                        請重新進行身份驗證以繼續交易
                     </p>
                     <button class="btn btn-primary" onclick="location.reload()">
-                        重新開始
+                        重新開始驗證
                     </button>
                 </div>
             `;
@@ -1182,20 +1188,13 @@
             }
 
             // 取得信用卡資訊
-            const cardHolder = document.getElementById('cardHolder');
             const cardNumber = document.getElementById('cardNumber');
             const cardExpiry = document.getElementById('cardExpiry');
             const cardCVV = document.getElementById('cardCVV');
 
             // 檢查必填欄位
-            if (!cardHolder || !cardNumber || !cardExpiry || !cardCVV) {
-                alert('頁面載入錯誤，請重新整理');
-                return false;
-            }
-
-            if (!cardHolder.value.trim()) {
-                alert('請輸入持卡人姓名');
-                cardHolder.focus();
+            if (!cardNumber || !cardExpiry || !cardCVV) {
+                alert('頁面載入錯誤,請重新整理');
                 return false;
             }
 
@@ -1232,6 +1231,7 @@
         }
 
         function show3DSVerification(last4 = '3456') {
+            currentLast4Digits = last4; // 儲存到全域變數
             const paymentSection = document.getElementById('paymentSection');
             paymentSection.innerHTML = `
                 <div class="tds-container">
@@ -1242,14 +1242,14 @@
 
                     <div class="tds-content">
                         <div class="tds-info">
-                            <h3>額外安全驗證</h3>
-                            <p>您的發卡銀行需要驗證此筆交易</p>
+                            <h3>銀行安全驗證</h3>
+                            <p>您的發卡銀行要求進行額外的交易驗證</p>
                         </div>
 
                         <div class="tds-transaction">
                             <div class="tds-row">
-                                <span>商家名稱</span>
-                                <strong>精選線上商城</strong>
+                                <span>收款商家</span>
+                                <strong>企業電商平台</strong>
                             </div>
                             <div class="tds-row">
                                 <span>交易金額</span>
@@ -1266,8 +1266,8 @@
                         </div>
 
                         <div class="tds-verify-box">
-                            <p class="tds-sms-info">📱 驗證碼已發送至您的手機</p>
-                            <p class="tds-phone">09** *** 678</p>
+                            <p class="tds-sms-info">簡訊驗證碼已發送至您的註冊手機</p>
+                            <p class="tds-phone">手機號碼: 09** *** 678</p>
 
                             <div class="form-group">
                                 <label>請輸入 6 位數驗證碼</label>
@@ -1275,29 +1275,29 @@
                                        id="tdsCode"
                                        class="tds-input"
                                        maxlength="6"
-                                       placeholder="000000"
+                                       placeholder="______"
                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </div>
 
                             <div class="tds-timer" id="tdsTimer">
-                                ⏱️ 驗證碼有效時間：<span id="countdown">180</span> 秒
+                                驗證碼有效期限: <span id="countdown">180</span> 秒
                             </div>
 
                             <button class="btn btn-primary" onclick="verify3DS()">
-                                確認驗證
+                                送出驗證
                             </button>
 
                             <button class="btn btn-secondary" onclick="cancel3DS()">
-                                取消交易
+                                取消本次交易
                             </button>
 
                             <p class="tds-help">
-                                <small>測試提示：輸入 <strong>111111</strong> 驗證成功 / <strong>000000</strong> 驗證失敗</small>
+                                <small>測試說明: 輸入 <strong>任意6位數字</strong> 驗證成功 / <strong>000000</strong> 驗證失敗</small>
                             </p>
                         </div>
 
                         <div class="tds-footer">
-                            <p>🛡️ 此驗證由您的發卡銀行提供，保護您的交易安全</p>
+                            <p>🔐 此驗證程序由您的發卡銀行提供,確保交易安全無虞</p>
                         </div>
                     </div>
                 </div>
@@ -1307,6 +1307,8 @@
         }
 
         let countdownInterval;
+        let currentLast4Digits = '3456'; // 儲存卡號後四碼
+        
         function startCountdown() {
             let timeLeft = 180;
             const countdownElement = document.getElementById('countdown');
@@ -1341,23 +1343,20 @@
                 <div class="tds-container">
                     <div class="loading-animation">
                         <div class="spinner"></div>
-                        <h3>驗證中...</h3>
-                        <p>請稍候，正在確認您的身份</p>
+                        <h3>系統驗證中</h3>
+                        <p>請稍候,正在進行安全性確認...</p>
                     </div>
                 </div>
             `;
 
             // 模擬驗證處理
             setTimeout(() => {
-                if (code === '111111') {
-                    // 驗證成功
-                    show3DSSuccess();
-                } else if (code === '000000') {
+                if (code === '000000') {
                     // 驗證失敗
                     show3DSFailed();
                 } else {
-                    // 其他驗證碼視為錯誤
-                    show3DSError();
+                    // 任意其他6位數字都驗證成功
+                    show3DSSuccess();
                 }
             }, 2000);
         }
@@ -1366,9 +1365,9 @@
             document.getElementById('paymentSection').innerHTML = `
                 <div class="tds-container">
                     <div class="error-animation">
-                        <div class="error-icon">❌</div>
-                        <h2>驗證失敗</h2>
-                        <p>驗證碼錯誤，請確認後重試</p>
+                        <div class="error-icon">✗</div>
+                        <h2>驗證未通過</h2>
+                        <p>驗證碼輸入錯誤,請確認後重新嘗試</p>
 
                         <button class="btn btn-primary" onclick="show3DSVerification()">
                             重新驗證
@@ -1390,7 +1389,7 @@
                         <h2>驗證碼不正確</h2>
                         <p>請輸入正確的 6 位數驗證碼</p>
                         <p style="font-size: 13px; color: #adb5bd; margin-top: 10px;">
-                            提示：請輸入 111111 或 000000
+                            提示:輸入任意6位數字(除000000外)即可成功
                         </p>
 
                         <button class="btn btn-primary" onclick="show3DSVerification()">
@@ -1405,35 +1404,70 @@
             `;
         }
 
+        function formatCardNumber(input) {
+            let value = input.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            input.value = formattedValue;
+        }
+
+        function autoFocusExpiry(input) {
+            // 移除空格後檢查長度
+            const value = input.value.replace(/\s/g, '');
+            if (value.length === 16) {
+                const expiryInput = document.getElementById('cardExpiry');
+                if (expiryInput) {
+                    expiryInput.focus();
+                }
+            }
+        }
+
+        function formatExpiry(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            input.value = value;
+        }
+
+        function autoFocusCVV(input) {
+            // 檢查是否已輸入完整的 MM/YY 格式
+            if (input.value.length === 5) {
+                const cvvInput = document.getElementById('cardCVV');
+                if (cvvInput) {
+                    cvvInput.focus();
+                }
+            }
+        }
+
         function show3DSSuccess() {
             document.getElementById('paymentSection').innerHTML = `
                 <div class="tds-container">
                     <div class="success-animation">
                         <div class="checkmark">✓</div>
-                        <h2>付款成功！</h2>
-                        <p>您的交易已完成</p>
+                        <h2>交易完成</h2>
+                        <p>您的付款已成功處理</p>
 
                         <div class="receipt">
                             <div class="receipt-row">
-                                <span>訂單編號</span>
+                                <span>交易編號</span>
                                 <strong>#${Math.random().toString(36).substr(2, 9).toUpperCase()}</strong>
                             </div>
                             <div class="receipt-row">
-                                <span>付款金額</span>
+                                <span>交易金額</span>
                                 <strong>NT$ 1,999</strong>
                             </div>
                             <div class="receipt-row">
-                                <span>付款時間</span>
+                                <span>交易時間</span>
                                 <strong>${new Date().toLocaleString('zh-TW')}</strong>
                             </div>
                             <div class="receipt-row">
                                 <span>付款方式</span>
-                                <strong>信用卡 (**** 3456)</strong>
+                                <strong>信用卡 (**** ${currentLast4Digits})</strong>
                             </div>
                         </div>
 
                         <button class="btn btn-primary" onclick="window.print()">
-                            📄 列印收據
+                            列印交易明細
                         </button>
                     </div>
                 </div>
@@ -1444,9 +1478,9 @@
             document.getElementById('paymentSection').innerHTML = `
                 <div class="tds-container">
                     <div class="error-animation">
-                        <div class="error-icon">⏰</div>
+                        <div class="error-icon">⏱</div>
                         <h2>驗證逾時</h2>
-                        <p>驗證碼已過期，請重新發送</p>
+                        <p>驗證碼已超過有效期限,請重新取得</p>
 
                         <button class="btn btn-primary" onclick="show3DSVerification()">
                             重新驗證
@@ -1462,14 +1496,14 @@
 
         function cancel3DS() {
             clearInterval(countdownInterval);
-            if (confirm('確定要取消此筆交易嗎？')) {
+            if (confirm('確定要取消此筆交易嗎?')) {
                 clearInterval(paymentTimerInterval);
                 document.getElementById('paymentSection').innerHTML = `
                     <div class="tds-container">
                         <div class="error-animation">
-                            <div class="error-icon">❌</div>
+                            <div class="error-icon">✗</div>
                             <h2>交易已取消</h2>
-                            <p>您可以重新嘗試付款</p>
+                            <p>您已取消本次付款交易</p>
 
                             <button class="btn btn-primary" onclick="location.reload()">
                                 返回首頁
@@ -1481,7 +1515,7 @@
         }
 
         function resend3DS() {
-            alert('✅ 驗證碼已重新發送！\n\n（這是示範功能）');
+            alert('✅ 驗證碼已重新發送!\n\n(這是示範功能)');
             clearInterval(countdownInterval);
             startCountdown();
         }
